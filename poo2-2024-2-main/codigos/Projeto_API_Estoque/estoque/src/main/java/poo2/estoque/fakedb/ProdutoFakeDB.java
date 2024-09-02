@@ -1,54 +1,22 @@
 package poo2.estoque.fakedb;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class ProdutoFakeDB extends BaseFakeDB {
+import poo2.estoque.domain.Produto;
 
-    public ProdutoFakeDB (){
+public class ProdutoFakeDB extends BaseFakeDB<Produto> {
+
+    public ProdutoFakeDB(){
         super();
     }
 
     @Override
-    public ArrayList getLista() {
-        // TODO Auto-generated method stub
-        return super.getLista();
-    }
-
-    @Override
     protected void preencherLista() {
-        // TODO Auto-generated method stub
-        
-    }
-
-    @Override
-    protected Object clone() throws CloneNotSupportedException {
-        // TODO Auto-generated method stub
-        return super.clone();
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        // TODO Auto-generated method stub
-        return super.equals(obj);
-    }
-
-    @Override
-    protected void finalize() throws Throwable {
-        // TODO Auto-generated method stub
-        super.finalize();
-    }
-
-    @Override
-    public int hashCode() {
-        // TODO Auto-generated method stub
-        return super.hashCode();
-    }
-
-    @Override
-    public String toString() {
-        // TODO Auto-generated method stub
-        return super.toString();
-    } 
-
-    
+        if (this.lista == null){
+            this.lista = new ArrayList<>();
+        }
+        double valorProduto = 22;
+        this.lista.add(new Produto(1L, LocalDate.now(), null, "Queijo", 1L, valorProduto));
+    }    
 }

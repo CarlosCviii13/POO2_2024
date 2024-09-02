@@ -1,53 +1,21 @@
 package poo2.estoque.fakedb;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class SubClasseProdutoFakeDB extends ProdutoFakeDB {
+import poo2.estoque.domain.SubClasseProduto;
 
-        public SubClasseProdutoFakeDB () {
-            super();
-        }
+public class SubClasseProdutoFakeDB extends BaseFakeDB<SubClasseProduto> {
 
-        @Override
-        protected Object clone() throws CloneNotSupportedException {
-            // TODO Auto-generated method stub
-            return super.clone();
-        }
+    public SubClasseProdutoFakeDB(){
+        super();
+    }
 
-        @Override
-        public boolean equals(Object obj) {
-            // TODO Auto-generated method stub
-            return super.equals(obj);
+    @Override
+    protected void preencherLista() {
+        if (this.lista == null){
+            this.lista = new ArrayList<>();
         }
-
-        @Override
-        protected void finalize() throws Throwable {
-            // TODO Auto-generated method stub
-            super.finalize();
-        }
-
-        @Override
-        public ArrayList getLista() {
-            // TODO Auto-generated method stub
-            return super.getLista();
-        }
-
-        @Override
-        public int hashCode() {
-            // TODO Auto-generated method stub
-            return super.hashCode();
-        }
-
-        @Override
-        protected void preencherLista() {
-            // TODO Auto-generated method stub
-            super.preencherLista();
-        }
-
-        @Override
-        public String toString() {
-            // TODO Auto-generated method stub
-            return super.toString();
-        }
-    
+        this.lista.add(new SubClasseProduto(1L, LocalDate.now(), null, "Leite tipo A", 1L));
+    }    
 }

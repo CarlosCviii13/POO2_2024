@@ -1,6 +1,6 @@
 package poo2.estoque.repository;
 
-public class ProdutoRepositorio {
+public class ClienteRepositorio {
     public ClasseProdutoRepositorio(){
         ClasseProdutoFakeDB db = new ClasseProdutoFakeDB();
         this.storage = db.getLista();
